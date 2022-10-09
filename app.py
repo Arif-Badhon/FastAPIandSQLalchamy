@@ -1,5 +1,6 @@
 from turtle import title
 from fastapi import FastAPI
+from routes.user import *
 
 
 
@@ -11,3 +12,5 @@ app = FastAPI(
 @app.get("/")
 def root():
     return ({"msg" : "working"})
+
+app.include_router(user)
